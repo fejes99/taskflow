@@ -1,0 +1,46 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build & TypeScript
+dist/
+build/
+*.tsbuildinfo
+
+# Serverless output
+.serverless/
+
+# Logs
+logs/
+*.log
+
+# Local env
+.env
+.env.*
+
+# IDE / OS metadata
+.vscode/
+.idea/
+.DS_Store
+
+# Prisma artifacts
+prisma/dev.db
+prisma/dev.db-journal
+
+# Swagger temp files (optional)
+swagger/*.json
+swagger-output.json
+
+# Fastify generated OpenAPI (optional)
+fastify-swagger.json
+
+# Unit test snapshots (if any)
+__snapshots__/
+coverage/
+
+# Other
+*.local.js
+*.bak
+*.tmp

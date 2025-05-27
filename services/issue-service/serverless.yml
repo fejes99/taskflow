@@ -1,0 +1,24 @@
+service: issue-service
+
+frameworkVersion: '4'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-central-1
+
+plugins:
+  - serverless-auto-swagger
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
+
+functions:
+  issueHandler:
+    handler: handler.handler
+    events:
+      - http:
+          path: issues
+          method: get
