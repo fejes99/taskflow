@@ -1,6 +1,7 @@
 import Fastify from 'fastify';
 import { issueRoutes } from './routes/issueRoutes';
 import { errorHandler } from './infrastructure/http/plugins/errorHandler';
+import awsLambdaFastify from '@fastify/aws-lambda';
 
 const app = Fastify();
 
@@ -11,17 +12,23 @@ const app = Fastify();
   await errorHandler(app);
 })();
 
-export const handler = async (event: any, context: any) => {
-  const res = await app.inject({
-    method: event.httpMethod,
-    url: event.path,
-    query: event.queryStringParameters,
-    payload: event.body,
-  });
+const proxy = awsLambdaFastify(app);
+export const handler = proxy;
 
-  return {
-    statusCode: res.statusCode,
-    body: res.body,
-    headers: { 'Content-Type': 'application/json' },
-  };
-};
+// export const handler = async (event: any, context: any) => {
+//   const res = await app.inject({
+//     method: event.httpMethod,
+//     url: event.path,
+//     query: event.queryStringParameters,
+//     payload: event.body,
+//     headers: {
+//       'Content-Type': event.headers?.['Content-Type'] ?? 'application/json',
+//     },
+//   });
+
+//   return {
+//     statusCode: res.statusCode,
+//     body: res.body,
+//     headers: { 'Content-Type': 'application/json' },
+//   };
+// };

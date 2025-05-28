@@ -23,6 +23,151 @@
             "description": "200 response"
           }
         }
+      },
+      "post": {
+        "summary": "issueHandler",
+        "description": "",
+        "operationId": "issueHandler.post.issues",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          }
+        }
+      }
+    },
+    "/issues/{id}": {
+      "get": {
+        "summary": "issueHandler",
+        "description": "",
+        "operationId": "issueHandler.get.issues/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          }
+        }
+      },
+      "patch": {
+        "summary": "issueHandler",
+        "description": "",
+        "operationId": "issueHandler.patch.issues/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          }
+        }
+      }
+    },
+    "/issues/{id}/assign": {
+      "patch": {
+        "summary": "issueHandler",
+        "description": "",
+        "operationId": "issueHandler.patch.issues/{id}/assign",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          }
+        }
+      }
+    },
+    "/issues/{id}/resolve": {
+      "patch": {
+        "summary": "issueHandler",
+        "description": "",
+        "operationId": "issueHandler.patch.issues/{id}/resolve",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          }
+        }
+      }
+    },
+    "/issues/{id}/reopen": {
+      "patch": {
+        "summary": "issueHandler",
+        "description": "",
+        "operationId": "issueHandler.patch.issues/{id}/reopen",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          }
+        }
       }
     }
   },

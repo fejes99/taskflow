@@ -22,3 +22,21 @@ functions:
       - http:
           path: issues
           method: get
+      - http:
+          path: issues
+          method: post
+      - http:
+          path: issues/{id}
+          method: get
+      - http:
+          path: issues/{id}
+          method: patch
+      - http:
+          path: issues/{id}/assign
+          method: patch
+      - http:
+          path: issues/{id}/resolve
+          method: patch
+      - http:
+          path: issues/{id}/reopen
+          method: patch

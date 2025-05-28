@@ -125,7 +125,11 @@ exports.Prisma.IssueScalarFieldEnum = {
   title: 'title',
   description: 'description',
   status: 'status',
-  createdAt: 'createdAt'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  createdById: 'createdById',
+  assignedToId: 'assignedToId',
+  isDeleted: 'isDeleted'
 };
 
 exports.Prisma.SortOrder = {
@@ -136,6 +140,11 @@ exports.Prisma.SortOrder = {
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 
 
